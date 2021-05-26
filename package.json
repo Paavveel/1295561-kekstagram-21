@@ -1,23 +1,33 @@
 {
-  "name": "kekstagram",
+  "name": "code-and-magick",
   "version": "19.0.0",
   "private": true,
-  "description": "Личный проект «Кекстаграм» от HTML Academy",
+  "description": "Учебный проект «Код и Магия» от HTML Academy",
   "repository": {
     "type": "git",
-    "url": "git@github.com:htmlacademy-javascript/1295561-kekstagram-21.git"
+    "url": "git@github.com:htmlacademy-javascript/1295561-code-and-magick-21.git"
   },
   "bugs": {
-    "url": "https://github.com/htmlacademy-javascript/1295561-kekstagram-21/issues"
+    "url": "https://github.com/htmlacademy-javascript/1295561-code-and-magick-21/issues"
   },
   "devDependencies": {
-    "eslint": "7.1.0",
-    "eslint-config-htmlacademy": "0.6.0"
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.2.1",
+    "webpack": "5.37.1",
+    "webpack-cli": "4.7.0"
   },
   "license": "MIT",
   "dependencies": {},
   "scripts": {
-    "test": "eslint js/"
+    "test": "eslint js/",
+    "build": "webpack --mode production",
+    "build.dev": "webpack --mode development"
   },
   "engines": {
     "node": "8.11"
