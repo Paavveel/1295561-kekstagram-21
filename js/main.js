@@ -31,7 +31,8 @@
   render(window.data.photosArray);
 
   const bigPicture = document.querySelector('.big-picture');
-  bigPicture.classList.remove('hidden');
+  // bigPicture.classList.remove('hidden');
+
   const bigPicturePreview = bigPicture.querySelector('.big-picture__preview');
 
   const showPreview = (photos) => {
@@ -52,12 +53,15 @@
     ).textContent = photos[0].comments[0].message;
 
     body.classList.add('modal-open');
+
+    bigPicturePreview
+      .querySelector('.social__comment-count')
+      .classList.add('hidden');
+    bigPicturePreview.querySelector('.comments-loader').classList.add('hidden');
   };
 
-  bigPicturePreview
-    .querySelector('.social__comment-count')
-    .classList.add('hidden');
-  bigPicturePreview.querySelector('.comments-loader').classList.add('hidden');
-
-  showPreview(window.data.photosArray);
+  // showPreview(window.data.photosArray);
+  window.main = {
+    body,
+  };
 })();

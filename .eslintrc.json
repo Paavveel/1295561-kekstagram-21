@@ -8,7 +8,8 @@
     "no-console": "off",
     "no-plusplus": "off",
     "no-param-reassign": "off",
-    "no-else-return": "off"
+    "no-else-return": "off",
+    "no-use-before-define": "warn"
     // "func-names": "off",
     // "class-methods-use-this": "off"
   }

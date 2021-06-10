@@ -1,6 +1,18 @@
 (() => {
   'use strict';
 
+  const isEscEvent = (evt, action) => {
+    if (evt.key === 'Escape') {
+      action();
+    }
+  };
+
+  const isEnterEvent = (evt, action) => {
+    if (evt.key === 'Enter') {
+      action();
+    }
+  };
+
   const getRandomNumber = (min, max) =>
     Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -46,4 +58,9 @@
 
   window.data.photosArray = getRandomArray(25);
   console.log(window.data.photosArray);
+
+  window.util = {
+    isEscEvent,
+    isEnterEvent,
+  };
 })();

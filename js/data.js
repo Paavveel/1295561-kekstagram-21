@@ -7,6 +7,10 @@
   const MAX_AVATAR_NUMBER = 6;
   const MIN_COMMENT_NUMBER = 5;
   const MAX_COMMENT_NUMBER = 10;
+  const SCALE_MIN = 25;
+  const SCALE_MAX = 75;
+  const SCALE_FULL = 100;
+  const SCALE_COUNT = 25;
 
   const descriptions = [
     'Описание 1',
@@ -53,5 +57,9 @@
     names,
     messages,
     photosArray,
+    SCALE_COUNT,
+    SCALE_MIN,
+    SCALE_MAX,
+    SCALE_FULL,
   };
 })();
