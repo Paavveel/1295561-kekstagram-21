@@ -11,16 +11,16 @@
     "url": "https://github.com/htmlacademy-javascript/1295561-code-and-magick-21/issues"
   },
   "devDependencies": {
-    "eslint": "^7.25.0",
+    "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.2.1",
-    "webpack": "5.37.1",
-    "webpack-cli": "4.7.0"
+    "prettier": "^2.3.1",
+    "webpack": "5.38.1",
+    "webpack-cli": "4.7.2"
   },
   "license": "MIT",
   "dependencies": {},

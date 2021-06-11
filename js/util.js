@@ -1,6 +1,35 @@
 (() => {
   'use strict';
 
+  const DEBOUNCE_INTERVAL = 500;
+
+  const debounce = (cb) => {
+    let lastTimeout = null;
+
+    return (...parameters) => {
+      if (lastTimeout) {
+        window.clearTimeout(lastTimeout);
+      }
+      lastTimeout = window.setTimeout(() => {
+        cb(...parameters);
+      }, DEBOUNCE_INTERVAL);
+    };
+  };
+
+  /**
+   * Возвращает координаты элемента относительно документа
+   * @param {Object} elem - DOM-элемент
+   * @return {Object} - объект с координатами элемента по осям Y и X
+   */
+  const getCoords = (elem) => {
+    const box = elem.getBoundingClientRect();
+
+    return {
+      top: box.top + pageYOffset,
+      left: box.left + pageXOffset,
+    };
+  };
+
   const isEscEvent = (evt, action) => {
     if (evt.key === 'Escape') {
       action();
@@ -62,5 +91,7 @@
   window.util = {
     isEscEvent,
     isEnterEvent,
+    debounce,
+    getCoords,
   };
 })();

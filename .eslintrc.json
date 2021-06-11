@@ -9,7 +9,8 @@
     "no-plusplus": "off",
     "no-param-reassign": "off",
     "no-else-return": "off",
-    "no-use-before-define": "warn"
+    "no-use-before-define": "warn",
+    "no-restricted-syntax": "off"
     // "func-names": "off",
     // "class-methods-use-this": "off"
   }
