@@ -12,6 +12,13 @@
     changeScale,
   } = window.editing;
 
+  const {
+    checkArrayLength,
+    checkDuplicates,
+    checkHashtagsValidity,
+    checkHashtagsLength,
+  } = window.validation;
+
   const { getCoords, isEscEvent } = window.util;
 
   const uploadFile = document.querySelector('#upload-file');
@@ -29,6 +36,15 @@
   const effects = imgUploadOverlay.querySelector('.effects');
   const effectLevelPin = imgUploadOverlay.querySelector('.effect-level__pin');
   const effectLevelLine = imgUploadOverlay.querySelector(`.effect-level__line`);
+  const textHashtagsInput = document.querySelector(`.text__hashtags`);
+  const imgUploadText = document.querySelector(`.img-upload__text`);
+
+  const checkFunctions = [
+    checkHashtagsLength,
+    checkDuplicates,
+    checkArrayLength,
+    checkHashtagsValidity,
+  ];
 
   const onScaleControlSmallerClick = () => {
     changeScale(Scale.MIN, Scale.MAX, -Scale.STEP);
@@ -118,5 +134,26 @@
     uploadCancel.addEventListener('click', onUploadCancelClick);
     scaleControlSmaller.addEventListener('click', onScaleControlSmallerClick);
     scaleControlBigger.addEventListener('click', onScaleControlBiggerClick);
+  });
+
+  textHashtagsInput.addEventListener(`input`, () => {
+    const hashtags = textHashtagsInput.value.trim().split(` `);
+    for (let i = 0; i < checkFunctions.length; i++) {
+      checkFunctions[i](hashtags);
+      if (textHashtagsInput.validationMessage) {
+        textHashtagsInput.style.outline = `1px auto red`;
+        break;
+      } else {
+        textHashtagsInput.style.outline = ``;
+      }
+    }
+  });
+
+  imgUploadText.addEventListener(`focusin`, () => {
+    document.removeEventListener(`keydown`, onOverlayEscPress);
+  });
+
+  imgUploadText.addEventListener(`focusout`, () => {
+    document.addEventListener(`keydown`, onOverlayEscPress);
   });
 })();
